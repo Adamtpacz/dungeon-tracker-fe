@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
-import CampaignIndex from "../../pages/Campaign Index"
-import CampaignShow from "../../pages/Campaign Show"
-import CampaignCreate from "../../pages/Campaign Create"
+import CampaignIndex from "../../pages/Campaign-Index"
+import CampaignShow from "../../pages/Campaign-Show"
+import CampaignCreate from "../../pages/Campaign-Create"
 
 export default function Main() {
     return (
