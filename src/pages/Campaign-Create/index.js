@@ -81,8 +81,6 @@ export default function CampaignCreate() {
                 />
                 <button>Create</button>
             </form>
-
         </section>
-        
     )
 }
