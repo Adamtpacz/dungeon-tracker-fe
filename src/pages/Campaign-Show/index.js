@@ -6,8 +6,8 @@ export default function CampaignShow() {
 
     const { id } = useParams()
     // console.log("documentId:", id)
-    const [campaign, setCampaign] = useState()
-    const [isLoading, setIsLoading] = useState(true)
+    const [ campaign, setCampaign ] = useState()
+    const [ isLoading, setIsLoading ] = useState(true)
 
     async function handleRequest() {
         try {
@@ -23,7 +23,7 @@ export default function CampaignShow() {
 
     useEffect(() => {
         handleRequest()
-    })
+    }, [isLoading])
 
     const loaded = () => {
         return (

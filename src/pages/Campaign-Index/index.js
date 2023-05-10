@@ -19,7 +19,7 @@ export default function CampaignIndex(props) {
 
     useEffect(() => {
         handleRequest()
-    })
+    }, [isLoading])
 
     const loaded = () => {
         return campaigns?.map((campaign) => {
