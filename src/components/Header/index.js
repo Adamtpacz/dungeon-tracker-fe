@@ -3,7 +3,7 @@ const bannerImage = "https://images.ctfassets.net/swt2dsco9mfe/1dQoOoGmRy9NMlAU2
 export default function Header() {
     return (
         <header className="Header">
-            <img style={{width:"100%"}} src={bannerImage}/>
+            <img alt="Banner" src={bannerImage}/>
         </header>
     )
 }
