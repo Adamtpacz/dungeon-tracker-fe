@@ -1,5 +1,4 @@
-// const BASE_URL = process.env.REACT_APP_BASE_URL
-const BASE_URL = "http://localhost:4000/campaign"
+const BASE_URL = process.env.REACT_APP_BASE_URL
 // console.log(BASE_URL)
 
 export async function index(){

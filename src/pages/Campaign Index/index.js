@@ -24,7 +24,7 @@ export default function CampaignIndex(props) {
     const loaded = () => {
         return campaigns?.map((campaign) => {
             return (
-                <div key={campaign.id} className='Campaign-card'>
+                <div key={campaign._id} className='Campaign-card'>
                     <Link to={`/campaign/${campaign._id}`}>
                         <h1>{campaign.title}</h1>
                         <img alt="Campaign Graphic" className="Campaign-image" src={campaign.image}/>
