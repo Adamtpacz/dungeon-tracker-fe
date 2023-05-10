@@ -1,27 +1,36 @@
 import { useState } from 'react'
+import { createCampaign } from '../../utilities/campaign-services'
 
 export default function CampaignCreate() {
 
     const [ newForm, setNewForm ] = useState({
         title: "",
         description: "",
-        startLevel: null,
-        endLevel: null,
-        numOfPlayers: null,
+        startLevel: "",
+        endLevel: "",
+        numOfPlayers: "",
         image: ""
     })
 
     async function handleSubmit(e) {
         e.preventDefault()
         try {
-            
+            await createCampaign(newForm)
+            setNewForm({
+                title: "",
+                description: "",
+                startLevel: "",
+                endLevel: "",
+                numOfPlayers: "",
+                image: ""
+            })
         } catch(err) {
-
+            console.log(err)
         }
     }
 
-    async function handleChange(e) {
-
+    function handleChange(e) {
+        setNewForm({ ...newForm, [e.target.name]: e.target.value })
     }
 
     return (
@@ -46,6 +55,7 @@ export default function CampaignCreate() {
                     value={newForm.startLevel}
                     name="startLevel"
                     required
+                    type="number"
                     placeholder="Starting Level"
                 />
                 <input
@@ -53,12 +63,14 @@ export default function CampaignCreate() {
                     value={newForm.endLevel}
                     name="endLevel"
                     required
+                    type="number"
                     placeholder="Ending Level"
                 />
                 <input
                     onChange={handleChange}
                     value={newForm.numOfPlayers}
                     name="numOfPlayers"
+                    type="number"
                     placeholder="Numbers of Players"
                 />
                 <input
