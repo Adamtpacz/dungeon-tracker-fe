@@ -1,9 +1,15 @@
-import './App.css';
+import './App.css'
+import Header from './components/Header'
+import Main from './components/Main'
+import Nav from './components/Nav'
+
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <Header />
+      <Nav />
+      <Main />
     </div>
   );
 }
