@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getCampaign } from '../../utilities/campaign-services'
+import { allCampaigns } from '../../utilities/campaign-services'
 import { Link } from 'react-router-dom'
 
 export default function CampaignIndex(props) {
@@ -9,7 +9,7 @@ export default function CampaignIndex(props) {
 
     async function handleRequest() {
         try {
-            const apiResponse = await getCampaign()
+            const apiResponse = await allCampaigns()
             setCampaigns(apiResponse)
             setIsLoading(false)
         } catch(err) {

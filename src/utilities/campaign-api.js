@@ -41,3 +41,17 @@ export async function create(data) {
         return err
     }
 }
+
+export async function detail(id) {
+    const options = {
+        method: 'GET'
+    } 
+    const url = `${BASE_URL}/${id}`
+    const response = await fetch(url, options)
+    
+    if(response.ok){
+        return response.json()
+    } else {
+        throw new Error("Invalid GET Request")
+    }
+}
