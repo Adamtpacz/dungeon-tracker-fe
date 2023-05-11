@@ -1,5 +1,4 @@
 const BASE_URL = process.env.REACT_APP_BASE_URL
-// console.log(BASE_URL)
 
 export async function index() {
     try {
@@ -74,6 +73,25 @@ export async function update(id, data){
             throw new Error("Invalid PUT Request")
         }
 
+    } catch(err){
+        console.log(err)
+        return err
+    }
+}
+
+export async function destroy(id){
+    try {
+        const options = {
+            method: 'DELETE'
+        } 
+        const url = `${BASE_URL}/${id}`
+        const response = await fetch(url, options)
+        
+        if(response.ok){
+            return response.json()
+        } else {
+            throw new Error("Invalid DELETE Request")
+        }
     } catch(err){
         console.log(err)
         return err

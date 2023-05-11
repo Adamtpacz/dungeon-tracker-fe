@@ -39,3 +39,13 @@ export async function updateCampaign(id, data){
         throw new Error(err)
     }
 }
+
+export async function deleteCampaign(id){
+    try {
+        const deletedCampaign = await campaignAPI.destroy(id)
+        return deletedCampaign 
+    } catch (err) {
+        console.log(err)
+        throw new Error(err)
+    }
+}
