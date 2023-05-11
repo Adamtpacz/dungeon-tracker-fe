@@ -3,6 +3,7 @@ import CampaignIndex from "../../pages/Campaign-Index"
 import CampaignShow from "../../pages/Campaign-Show"
 import CampaignCreate from "../../pages/Campaign-Create"
 import CampaignUpdate from "../../pages/Campaign-Update"
+import EncounterShow from "../../pages/Encounter-Show"
 
 export default function Main() {
     return (
@@ -13,6 +14,7 @@ export default function Main() {
                 <Route path='/campaign/new' element={ <CampaignCreate /> } />
                 <Route path='/campaign/:id' element={ <CampaignShow /> } />
                 <Route path='/campaign/:id/edit' element={ <CampaignUpdate /> } />
+                <Route path='/campaign/:id/encounter' element={ <EncounterShow /> } />
             </Routes>
         </main>
     )
