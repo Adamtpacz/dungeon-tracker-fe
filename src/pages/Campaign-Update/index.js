@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { getCampaign, updateCampaign } from '../../utilities/campaign-services'
+import { getCampaign, updateCampaign, deleteCampaign } from '../../utilities/campaign-services'
 
 export default function CampaignUpdate() {
 
@@ -21,7 +21,6 @@ export default function CampaignUpdate() {
     async function handleRequest() {
         try {
             const campaignToEdit = await getCampaign(id)
-            console.log("Campaign to edit:", campaignToEdit)
             setCampaign(campaignToEdit)
             const { title, description, startLevel, endLevel, numOfPlayers, image } = campaignToEdit
             setEditForm({ title, description, startLevel, endLevel, numOfPlayers, image })
@@ -42,17 +41,31 @@ export default function CampaignUpdate() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            // console.log(editForm)
             const updatedCampaign = await updateCampaign(id, editForm)
 
             if (updatedCampaign._id) {
-                // console.log(updatedPerson)
                 navigate(`/campaign/${id}`)
             } else {
                 throw Error('Something went wrong')
             }
         } catch (err) {
             navigate(`/campaign/${id}/edit`)
+        }
+    }
+
+    async function handleDelete() {
+        try {
+            const delResponse = await deleteCampaign(id)
+            console.log(delResponse)
+
+            if (delResponse._id) {
+                navigate('/')
+            } else {
+                throw new Error("Something went wrong")
+            }
+        } catch (err) {
+            console.log(err)
+            navigate(`/people/${id}`)
         }
     }
 
@@ -111,6 +124,9 @@ export default function CampaignUpdate() {
                 />
                 <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1'>Submit</button>
             </form>
+            <div className='flex justify-center'>
+                <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 w-20' onClick={handleDelete}>Delete</button>
+            </div>
             </section>
         )
     }
