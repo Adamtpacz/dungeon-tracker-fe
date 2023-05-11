@@ -23,7 +23,7 @@ export default function CampaignShow() {
 
     useEffect(() => {
         handleRequest()
-    })
+    }, [isLoading])
 
     const loaded = () => {
         return (
