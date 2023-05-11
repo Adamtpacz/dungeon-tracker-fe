@@ -6,7 +6,7 @@ import Nav from './components/Nav'
 
 export default function App() {
   return (
-    <div className="App text-green-600 font-bold">
+    <div>
       <Header />
       <Nav />
       <Main />

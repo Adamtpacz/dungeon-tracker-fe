@@ -6,7 +6,7 @@ const plusIcon = "https://static.vecteezy.com/system/resources/previews/000/567/
 
 export default function Nav() {
     return (
-        <nav className='Nav-global'>
+        <nav className='Nav-global flex flex-col fixed m-0 text-white shadow-lg'>
             <Link to="/">
                 <img alt="D&D Logo" src={homeIcon}/>
             </Link>

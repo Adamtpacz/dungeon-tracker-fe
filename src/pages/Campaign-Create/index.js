@@ -38,6 +38,7 @@ export default function CampaignCreate() {
             <h1>Campaign Create Page</h1>
             <form className='Campaign-form' onSubmit={ handleSubmit }>
                 <input
+                    className=''
                     onChange={handleChange}
                     value={newForm.title}
                     name="title"

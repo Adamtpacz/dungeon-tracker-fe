@@ -27,14 +27,14 @@ export default function CampaignShow() {
 
     const loaded = () => {
         return (
-            <div className='Campaign-details'>
+            <div className='Campaign-details flex flex-col items-center'>
                 <h1>Campaign Show Page</h1>
                 <h2>{campaign.title}</h2>
                 <p>Description: {campaign.description}</p>
                 <p>Starting Level: {campaign.startLevel}</p>
                 <p>Ending Level: {campaign.startLevel}</p>
                 <p>Number of Players: {campaign.numOfPlayers}</p>
-                <img alt="Campaign Art" src={campaign.image}/>
+                <img className='w-96' alt="Campaign Art" src={campaign.image}/>
             </div>
         )
     }
