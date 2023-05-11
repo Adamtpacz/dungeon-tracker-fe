@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getCampaign } from '../../utilities/campaign-services'
 
+const defaultImage = "https://t3.ftcdn.net/jpg/05/47/69/40/360_F_547694087_0CoRsUGjizVDmt3ev8q2nwiR8BDYRWxJ.jpg"
+
 export default function CampaignShow() {
 
     const { id } = useParams()
@@ -34,7 +36,7 @@ export default function CampaignShow() {
                 <p>Starting Level: {campaign.startLevel}</p>
                 <p>Ending Level: {campaign.startLevel}</p>
                 <p>Number of Players: {campaign.numOfPlayers}</p>
-                <img className='w-96' alt="Campaign Art" src={campaign.image}/>
+                <img className='w-96' alt="Campaign Art" src={campaign.image || defaultImage}/>
             </div>
         )
     }

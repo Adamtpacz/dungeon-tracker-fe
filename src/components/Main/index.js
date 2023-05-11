@@ -10,8 +10,8 @@ export default function Main() {
             <h1>Dungeon Tracker</h1>
             <Routes>
                 <Route path='/' element={ <CampaignIndex /> } />
-                <Route path='/campaign/:id' element={ <CampaignShow /> } />
                 <Route path='/campaign/new' element={ <CampaignCreate /> } />
+                <Route path='/campaign/:id' element={ <CampaignShow /> } />
                 <Route path='/campaign/:id/edit' element={ <CampaignUpdate /> } />
             </Routes>
         </main>
