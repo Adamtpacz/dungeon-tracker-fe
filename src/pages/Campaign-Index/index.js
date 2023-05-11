@@ -29,6 +29,7 @@ export default function CampaignIndex(props) {
                         <h1>{campaign.title}</h1>
                         <img alt="Campaign Graphic" className="Campaign-image" src={campaign.image}/>
                     </Link>
+                    <Link to={`/campaign/${campaign._id}/edit`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1'>Edit</button></Link>
                 </div>
             )
         })

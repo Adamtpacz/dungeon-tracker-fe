@@ -29,3 +29,13 @@ export async function getCampaign(id){
         throw new Error(err)
     }
 }
+
+export async function updateCampaign(id, data){
+    try {
+        const updatedCampaign = await campaignAPI.update(id, data)
+        return updatedCampaign
+    } catch (err) {
+        console.log(err)
+        throw new Error(err)
+    }
+}
