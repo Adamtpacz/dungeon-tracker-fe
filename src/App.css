@@ -81,7 +81,7 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
-  border-radius: .5em;
+  border-radius: 1.5em;
   padding: 1.3em 1em;
 }
 

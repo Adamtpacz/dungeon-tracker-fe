@@ -18,3 +18,27 @@ export async function index(id) {
         return err
     }
 }
+
+export async function create(data, id) {
+    try {
+        const options = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }
+        
+        const url = `${BASE_URL}/${id}/encounters`
+        const response = await fetch(url, options)
+        
+        if(response.ok){
+            return response.json()
+        } else {
+            throw new Error("Invalid POST Request")
+        }
+    } catch(err){
+        console.log(err)
+        return err
+    }
+}

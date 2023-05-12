@@ -9,3 +9,13 @@ export async function allEncounters(id) {
         throw new Error(err)
     }
 }
+
+export async function createEncounter(data, id) {
+    try {
+        const newEncounter = await encounterAPI.create(data, id)
+        return newEncounter
+    } catch (err) {
+        console.log(err)
+        throw new Error(err)
+    }
+}
