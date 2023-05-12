@@ -14,9 +14,7 @@ export default function CampaignShow() {
     async function handleRequest() {
         try {
             const campaignData = await getCampaign(id)
-            console.log(campaignData)
             setCampaign(campaignData)
-            console.log("Current campaign:", campaign)
             setIsLoading(false)
         } catch (err) {
             console.log(err)

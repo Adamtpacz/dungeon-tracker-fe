@@ -11,7 +11,7 @@ import EncounterCreate from "../../pages/Encounter-Create"
 export default function Main() {
     return (
         <main>
-            <h1>Dungeon Tracker</h1>
+            <h1 className="font-bold text-4xl my-4">Dungeon Tracker</h1>
             <Routes>
                 <Route path='/' element={ <CampaignIndex /> } />
                 <Route path='/campaign/new' element={ <CampaignCreate /> } />
