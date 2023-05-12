@@ -48,10 +48,12 @@ export default function EncounterIndex() {
     return (
         <div>
             {/* <h1 className='font-bold text-2xl'>Encounters for <span className='text-red-700'>{campaign.title}</span></h1> */}
-            <section className='Campaign-list'>
+            <section className='Campaign-list my-0'>
                 {isLoading ? loading() : loaded()}
             </section>
-            <Link><button></button></Link>
+            <div className='flex justify-center my-8'>
+                <Link to={`/campaign/${id}/encounters/new`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1'>Add Encounter</button></Link>
+            </div>
         </div>
 
     )
