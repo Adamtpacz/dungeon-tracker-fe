@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getCampaign } from '../../utilities/campaign-services'
+import { Link } from 'react-router-dom'
 
 const defaultImage = "https://t3.ftcdn.net/jpg/05/47/69/40/360_F_547694087_0CoRsUGjizVDmt3ev8q2nwiR8BDYRWxJ.jpg"
 
 export default function CampaignShow() {
 
     const { id } = useParams()
-    // console.log("documentId:", id)
     const [ campaign, setCampaign ] = useState()
     const [ isLoading, setIsLoading ] = useState(true)
 
@@ -37,6 +37,7 @@ export default function CampaignShow() {
                 <p>Ending Level: {campaign.startLevel}</p>
                 <p>Number of Players: {campaign.numOfPlayers}</p>
                 <img className='w-96' alt="Campaign Art" src={campaign.image || defaultImage}/>
+                <Link to={`/campaign/${campaign._id}/encounters`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1'>Go to Encounters</button></Link>
             </div>
         )
     }
