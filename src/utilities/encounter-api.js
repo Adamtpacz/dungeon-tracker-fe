@@ -47,7 +47,7 @@ export async function detail(id) {
     const options = {
         method: 'GET'
     } 
-    const url = `/encounter/${id}`
+    const url = `http://localhost:4000/encounter/${id}`
     const response = await fetch(url, options)
     
     if(response.ok){

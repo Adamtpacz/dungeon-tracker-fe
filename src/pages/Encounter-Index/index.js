@@ -33,11 +33,11 @@ export default function EncounterIndex() {
         return encounters?.map((encounter) => {
             if (encounter.campaign === id) {
                 return (
-                    <Link to={`/encounter/${encounter._id}`}>
+                    <Link key={encounter._id} to={`/encounter/${encounter._id}`}>
                         <div key={encounter._id} className='Campaign-card'>
-                            <h1 className='font-bold text-2xl'>{encounter.name}</h1>
-                            <p><strong>Flavor Text:</strong> {encounter.flavorText}</p>
-                            <img alt="Encounter Battle Map" className="Campaign-image" src={encounter.map || defaultImage} />
+                            <h1 key={encounter.name} className='font-bold text-2xl'>{encounter.name}</h1>
+                            <p key={encounter.flavorText}><strong>Flavor Text:</strong> {encounter.flavorText}</p>
+                            <img key={encounter.map} alt="Encounter Battle Map" className="Campaign-image" src={encounter.map || defaultImage} />
                         </div>
                     </Link>
                 )
