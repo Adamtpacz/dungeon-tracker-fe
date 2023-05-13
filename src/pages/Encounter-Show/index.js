@@ -1,7 +1,9 @@
 import { getMonster } from "../../utilities/dnd-services"
 import { getEncounter } from "../../utilities/encounter-services"
+import { updateCampaign } from "../../utilities/campaign-services"
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
+import { Link } from "react-router-dom"
 
 const defaultImage = "https://cdn.shopify.com/s/files/1/0247/5206/2530/articles/Shadow_Map_2000x.jpg"
 
@@ -16,6 +18,7 @@ export default function EncounterShow() {
         try {
             const apiResponse = await getEncounter(id)
             setEncounter(apiResponse)
+            // console.log(id)
             // console.log("encounter:", encounter)
             // console.log("monsters:", encounter.monsters)
             setIsLoading(false)
@@ -26,7 +29,7 @@ export default function EncounterShow() {
 
     useEffect(() => {
         handleRequest()
-    }, [])
+    }, [isLoading])
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -68,7 +71,9 @@ export default function EncounterShow() {
                 </form>
                 <div className="border-2 border-black w-1/2 h-16 my-8 flex justify-center">
                     {encounter.monsters?.map((monster) => {
-                        return <div className="m-4">{monster}</div>
+                        return (
+                            <Link to={`/encounter/${id}/${monster}`}><div key={monster} className="m-2 border-2 border-black p-2">{monster}</div></Link>
+                        )
                     })}
                 </div>
             </section>
