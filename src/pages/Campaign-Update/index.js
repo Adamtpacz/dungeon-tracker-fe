@@ -44,7 +44,7 @@ export default function CampaignUpdate() {
             const updatedCampaign = await updateCampaign(id, editForm)
 
             if (updatedCampaign._id) {
-                navigate(`/campaign/${id}`)
+                navigate(`/`)
             } else {
                 throw Error('Something went wrong')
             }
@@ -65,7 +65,7 @@ export default function CampaignUpdate() {
             }
         } catch (err) {
             console.log(err)
-            navigate(`/people/${id}`)
+            navigate(`/campaign/${id}`)
         }
     }
 
