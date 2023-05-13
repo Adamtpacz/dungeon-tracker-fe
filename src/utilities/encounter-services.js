@@ -19,3 +19,13 @@ export async function createEncounter(data, id) {
         throw new Error(err)
     }
 }
+
+export async function getEncounter(id){
+    try {
+        const encounterData = await encounterAPI.detail(id)
+        return encounterData
+    } catch (err) {
+        console.log(err)
+        throw new Error(err)
+    }
+}

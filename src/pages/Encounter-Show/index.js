@@ -1,4 +1,5 @@
 import { getMonster } from "../../utilities/dnd-services"
+import { getEncounter } from "../../utilities/encounter-services"
 import { useState, useEffect } from 'react'
 export default function EncounterShow() {
 
@@ -6,6 +7,7 @@ export default function EncounterShow() {
         index: ""
     })
     const [ isLoading, setIsLoading ] = useState(true)
+    const [ encounter, setEncounter ] = useState(null)
 
     // async function handleRequest() {
     //     try {
