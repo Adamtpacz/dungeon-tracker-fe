@@ -6,7 +6,7 @@ import Nav from './components/Nav'
 
 export default function App() {
   return (
-    <div>
+    <div className='bg-gradient-to-br from-red-400 to-orange-700'>
       <Header />
       <Nav />
       <Main />

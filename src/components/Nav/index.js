@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom'
 
-const homeIcon = "https://img.icons8.com/color/12x/dungeons-and-dragons.png"
+const homeIcon = "https://i.etsystatic.com/22360457/r/il/447352/2199635638/il_570xN.2199635638_svz8.jpg"
 
 const plusIcon = "https://static.vecteezy.com/system/resources/previews/000/567/102/original/additional-plus-icon-vector.jpg"
 
 export default function Nav() {
     return (
-        <nav className='Nav-global flex flex-col fixed m-0 text-white shadow-lg'>
+        <nav className='Nav-global flex flex-col fixed p-4'>
             <Link to="/">
-                <img alt="D&D Logo" src={homeIcon}/>
+                <img className='w-16 rounded-full' alt="D&D Logo" src={homeIcon}/>
             </Link>
             <Link to="/campaign/new">
-                <img alt="Plus Icon" src={plusIcon}/>
+                <img className='w-16 rounded-full' alt="Plus Icon" src={plusIcon}/>
             </Link>
         </nav>
     )
