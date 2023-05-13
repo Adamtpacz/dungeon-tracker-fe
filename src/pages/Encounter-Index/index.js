@@ -31,13 +31,15 @@ export default function EncounterIndex() {
 
     const loaded = () => {
         return encounters?.map((encounter) => {
-            return (
-                <div key={encounter._id} className='Campaign-card'>
-                    <h1 className='font-bold text-2xl'>{encounter.name}</h1>
-                    <p><strong>Flavor Text:</strong> {encounter.flavorText}</p>
-                    <img alt="Encounter Battle Map" className="Campaign-image" src={encounter.map || defaultImage} />
-                </div>
-            )
+            if (encounter.campaign === id) {
+                return (
+                    <div key={encounter._id} className='Campaign-card'>
+                        <h1 className='font-bold text-2xl'>{encounter.name}</h1>
+                        <p><strong>Flavor Text:</strong> {encounter.flavorText}</p>
+                        <img alt="Encounter Battle Map" className="Campaign-image" src={encounter.map || defaultImage} />
+                    </div>
+                )
+            }
         })
     }
 
