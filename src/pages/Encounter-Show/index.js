@@ -78,7 +78,7 @@ export default function EncounterShow() {
                 <div className=" h-16 mt-4 grid gap-4 grid-cols-4">
                     {encounter.monsters?.map((monster) => {
                         return (
-                            <Link to={`/encounter/${id}/${monster}`}><div key={monster} className="bg-slate-300 hover:bg-slate-100 border-2 border-black p-4 mx-2 mb-4 text-center font-bold rounded-lg">{monster.toUpperCase()}</div></Link>
+                            <Link to={`/encounter/${id}/${monster}`}><div key={monster} className="bg-slate-300 hover:bg-slate-100 hover:scale-110 border-2 border-black p-4 mx-2 mb-4 text-center font-bold rounded-lg">{monster.toUpperCase()}</div></Link>
                         )
                     })}
                 </div>
