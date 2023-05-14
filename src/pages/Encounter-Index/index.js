@@ -11,7 +11,7 @@ export default function EncounterIndex() {
     const { id } = useParams()
     const [isLoading, setIsLoading] = useState(true)
     const [encounters, setEncounters] = useState(null)
-    const [campaign, setCampaign] = useState(null)
+    const [campaign, setCampaign] = useState([])
 
     async function handleRequest() {
         try {
@@ -33,13 +33,13 @@ export default function EncounterIndex() {
         return encounters?.map((encounter) => {
             if (encounter.campaign === id) {
                 return (
-                    <Link key={encounter._id} to={`/encounter/${encounter._id}`}>
-                        <div key={encounter._id} className='Campaign-card'>
-                            <h1 key={encounter.name} className='font-bold text-2xl'>{encounter.name}</h1>
-                            <p key={encounter.flavorText}><strong>Flavor Text:</strong> {encounter.flavorText}</p>
-                            <img key={encounter.map} alt="Encounter Battle Map" className="Campaign-image" src={encounter.map || defaultImage} />
-                        </div>
-                    </Link>
+                    <div key={encounter._id} className='border-2 border-black flex flex-col items-center rounded-3xl p-8 pb-1 bg-slate-200 mb-4'>
+                        <Link to={`/encounter/${encounter._id}`}>
+                            <h1 className='font-bold text-2xl mb-4'>{encounter.name}</h1>
+                            <p className='mb-4'><strong>Flavor Text:</strong> {encounter.flavorText}</p>
+                            <img className="border-2 border-black rounded-3xl hover:scale-105 mb-4" alt="Encounter Battle Map" src={encounter.map || defaultImage} />
+                        </Link>
+                    </div>
                 )
             }
         })
@@ -51,13 +51,13 @@ export default function EncounterIndex() {
 
     return (
         <div>
-            {/* <h1 className='font-bold text-2xl'>Encounters for <span className='text-red-700'>{campaign.title}</span></h1> */}
-            <section className='Campaign-list my-0'>
+            <h1 className='text-4xl mb-4 font-semibold'>Encounters for <span className='text-cyan-900 font-bold'>{campaign.title}</span></h1>
+            <div className='flex justify-center mb-4'>
+                <Link to={`/campaign/${id}/encounters/new`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-2 rounded-lg hover:bg-slate-300'>Add Encounter</button></Link>
+            </div>
+            <section className='grid gap-4 grid-cols-3 px-24'>
                 {isLoading ? loading() : loaded()}
             </section>
-            <div className='flex justify-center my-8'>
-                <Link to={`/campaign/${id}/encounters/new`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1'>Add Encounter</button></Link>
-            </div>
         </div>
 
     )

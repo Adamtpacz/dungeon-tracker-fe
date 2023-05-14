@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@600;700&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6, label {
-  margin-top: 0;
   text-align: center;
   font-family: 'Cormorant Unicase', serif;
 }
