@@ -8,8 +8,8 @@ const defaultImage = "https://t3.ftcdn.net/jpg/05/47/69/40/360_F_547694087_0CoRs
 export default function CampaignShow() {
 
     const { id } = useParams()
-    const [ campaign, setCampaign ] = useState()
-    const [ isLoading, setIsLoading ] = useState(true)
+    const [campaign, setCampaign] = useState()
+    const [isLoading, setIsLoading] = useState(true)
 
     async function handleRequest() {
         try {
@@ -27,15 +27,20 @@ export default function CampaignShow() {
 
     const loaded = () => {
         return (
-            <div className='Campaign-details flex flex-col items-center'>
+            <div className='flex justify-center'>
+                <div>
+                    <img className='w-96 h-full' alt="Campaign Art" src={campaign.image || defaultImage} />
+                </div>
+                <div>
+
                 <h1>Campaign Show Page</h1>
                 <h2>{campaign.title}</h2>
                 <p>Description: {campaign.description}</p>
                 <p>Starting Level: {campaign.startLevel}</p>
                 <p>Ending Level: {campaign.startLevel}</p>
                 <p>Number of Players: {campaign.numOfPlayers}</p>
-                <img className='w-96' alt="Campaign Art" src={campaign.image || defaultImage}/>
                 <Link to={`/campaign/${campaign._id}/encounters`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1'>Go to Encounters</button></Link>
+                </div>
             </div>
         )
     }
@@ -48,7 +53,7 @@ export default function CampaignShow() {
 
     return (
         <section>
-            { isLoading ? loading() : loaded() }
+            {isLoading ? loading() : loaded()}
         </section>
     )
 }

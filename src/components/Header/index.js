@@ -2,8 +2,8 @@ const bannerImage = "https://images.ctfassets.net/swt2dsco9mfe/1dQoOoGmRy9NMlAU2
 
 export default function Header() {
     return (
-        <header className="Header">
-            <img alt="Banner" src={bannerImage}/>
+        <header className="Header h-72 overflow-hidden">
+            <img className="" alt="Banner" src={bannerImage}/>
         </header>
     )
 }

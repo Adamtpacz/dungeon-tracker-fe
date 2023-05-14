@@ -26,12 +26,12 @@ export default function CampaignIndex(props) {
     const loaded = () => {
         return campaigns?.map((campaign) => {
             return (
-                <div key={campaign._id} className='Campaign-card'>
+                <div key={campaign._id} className='border border-black flex flex-col justify-start items-center rounded-3xl p-2 pb-1 bg-slate-200'>
                     <Link to={`/campaign/${campaign._id}`}>
-                        <h1 className='font-bold text-xl'>{campaign.title}</h1>
-                        <img alt="Campaign Graphic" className="Campaign-image" src={campaign.image || defaultImage}/>
+                        <h1 className='font-bold text-xl mb-4'>{campaign.title}</h1>
+                        <img alt="Campaign Graphic" className="rounded-3xl hover:scale-105 mb-4 h-96" src={campaign.image || defaultImage}/>
                     </Link>
-                    <Link to={`/campaign/${campaign._id}/edit`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1'>Edit</button></Link>
+                    <Link to={`/campaign/${campaign._id}/edit`}><button className='bg-slate-400 hover:bg-slate-300 m-2 border-2 rounded-lg border-neutral-950 p-1 w-16'>Edit</button></Link>
                 </div>
             )
         })
@@ -42,7 +42,7 @@ export default function CampaignIndex(props) {
     }
 
     return (
-        <section className='Campaign-list mb-'>
+        <section className='grid gap-16 grid-cols-4 px-32'>
             {isLoading ? loading() : loaded()}
         </section>
     )
