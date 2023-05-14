@@ -19,11 +19,6 @@ main {
   min-height: 100%;
 }
 
-.Header > img {
-  height: auto;
-  width: 100%;
-}
-
 .Campaign-list a {
   text-decoration: none;
 }

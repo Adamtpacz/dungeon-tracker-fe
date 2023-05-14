@@ -8,10 +8,10 @@ export default function Nav() {
     return (
         <nav className='Nav-global flex flex-col fixed p-4'>
             <Link to="/">
-                <img className='w-16 rounded-xl mb-4' alt="D&D Logo" src={homeIcon}/>
+                <img className='border-2 border-black w-16 rounded-xl mb-4' alt="D&D Logo" src={homeIcon}/>
             </Link>
             <Link to="/campaign/new">
-                <img className='w-16 rounded-xl' alt="Plus Icon" src={plusIcon}/>
+                <img className='border-2 border-black w-16 rounded-xl' alt="Plus Icon" src={plusIcon}/>
             </Link>
         </nav>
     )

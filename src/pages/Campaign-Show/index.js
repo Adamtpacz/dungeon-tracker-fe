@@ -28,18 +28,16 @@ export default function CampaignShow() {
     const loaded = () => {
         return (
             <div className='flex justify-center'>
-                <div>
-                    <img className='w-96 h-full' alt="Campaign Art" src={campaign.image || defaultImage} />
+                <div className='border-2 border-black rounded-3xl p-8 m-4 bg-slate-200'>
+                    <img className='w-96 h-full rounded-3xl border-2 border-black' alt="Campaign Art" src={campaign.image || defaultImage} />
                 </div>
-                <div>
-
-                <h1>Campaign Show Page</h1>
-                <h2>{campaign.title}</h2>
-                <p>Description: {campaign.description}</p>
-                <p>Starting Level: {campaign.startLevel}</p>
-                <p>Ending Level: {campaign.startLevel}</p>
-                <p>Number of Players: {campaign.numOfPlayers}</p>
-                <Link to={`/campaign/${campaign._id}/encounters`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1'>Go to Encounters</button></Link>
+                <div className='border-2 border-black rounded-3xl h-fit p-8 m-4 bg-slate-200 flex flex-col'>
+                    <h2 className='text-3xl'>{campaign.title}</h2>
+                    <p><strong>Description:</strong> {campaign.description}</p>
+                    <p><strong>Starting Level:</strong> {campaign.startLevel}</p>
+                    <p><strong>Ending Level:</strong> {campaign.startLevel}</p>
+                    <p><strong>Number of Players:</strong> {campaign.numOfPlayers}</p>
+                    <Link className='flex justify-center' to={`/campaign/${campaign._id}/encounters`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 rounded-lg'>Go to Encounters</button></Link>
                 </div>
             </div>
         )
