@@ -31,7 +31,7 @@ export default function CampaignShow() {
                 <div className='border-2 border-black rounded-3xl p-8 m-4 bg-slate-200'>
                     <img className='w-96 h-full rounded-3xl border-2 border-black' alt="Campaign Art" src={campaign.image || defaultImage} />
                 </div>
-                <div className='border-2 border-black rounded-3xl h-fit p-8 m-4 bg-slate-200 flex flex-col'>
+                <div className='border-2 border-black rounded-3xl h-fit p-8 m-4 bg-slate-200 flex flex-col w-1/4'>
                     <h2 className='text-3xl'>{campaign.title}</h2>
                     <p><strong>Description:</strong> {campaign.description}</p>
                     <p><strong>Starting Level:</strong> {campaign.startLevel}</p>

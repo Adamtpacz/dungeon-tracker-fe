@@ -18,7 +18,3 @@ main {
   flex-grow: 1;
   min-height: 100%;
 }
-
-.Campaign-list a {
-  text-decoration: none;
-}
