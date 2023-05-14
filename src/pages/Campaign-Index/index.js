@@ -42,7 +42,7 @@ export default function CampaignIndex(props) {
     }
 
     return (
-        <section className='Campaign-list'>
+        <section className='Campaign-list mb-'>
             {isLoading ? loading() : loaded()}
         </section>
     )
