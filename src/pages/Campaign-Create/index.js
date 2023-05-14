@@ -1,7 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 import { createCampaign } from '../../utilities/campaign-services'
 
 export default function CampaignCreate() {
+
+    const navigate = useNavigate()
 
     const [newForm, setNewForm] = useState({
         title: "",
@@ -24,6 +27,7 @@ export default function CampaignCreate() {
                 numOfPlayers: "",
                 image: ""
             })
+            navigate('/')
         } catch (err) {
             console.log(err)
         }
