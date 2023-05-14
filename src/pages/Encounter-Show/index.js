@@ -1,26 +1,24 @@
 import { getMonster } from "../../utilities/dnd-services"
-import { getEncounter } from "../../utilities/encounter-services"
+import { getEncounter, updateEncounter } from "../../utilities/encounter-services"
 import { updateCampaign } from "../../utilities/campaign-services"
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router'
+import { useParams, useNavigate } from 'react-router'
 import { Link } from "react-router-dom"
 
 const defaultImage = "https://cdn.shopify.com/s/files/1/0247/5206/2530/articles/Shadow_Map_2000x.jpg"
 
 export default function EncounterShow() {
 
+    const navigate = useNavigate()
     const { id } = useParams()
-    const [monster, setMonster] = useState({ index: "" })
-    const [isLoading, setIsLoading] = useState(true)
-    const [encounter, setEncounter] = useState()
+    const [ monster, setMonster ] = useState({ index: "" })
+    const [ isLoading, setIsLoading ] = useState(true)
+    const [ encounter, setEncounter ] = useState()
 
     async function handleRequest() {
         try {
             const apiResponse = await getEncounter(id)
             setEncounter(apiResponse)
-            // console.log(id)
-            // console.log("encounter:", encounter)
-            // console.log("monsters:", encounter.monsters)
             setIsLoading(false)
         } catch (err) {
             console.log(err)
@@ -35,10 +33,18 @@ export default function EncounterShow() {
         e.preventDefault()
         try {
             setMonster({ ...monster, [e.target.name]: e.target.value })
-            const apiResponse = await getMonster(monster.index.toLowerCase())
-            console.log(apiResponse)
+            const monsterIndex = monster.index.toLowerCase()
+            encounter.monsters.push(monsterIndex)            
+            const updatedEncounter = await updateEncounter(id, {monsters: encounter.monsters})
+
+            if(updatedEncounter._id) {
+                navigate(`/encounter/${id}`)
+            } else {
+                throw Error('Something went wrong')
+            }
         } catch (err) {
             console.log(err)
+            navigate('/')
         }
     }
 
@@ -72,7 +78,7 @@ export default function EncounterShow() {
                 <div className="border-2 border-black w-1/2 h-16 my-8 flex justify-center">
                     {encounter.monsters?.map((monster) => {
                         return (
-                            <Link to={`/encounter/${id}/${monster}`}><div key={monster} className="m-2 border-2 border-black p-2">{monster}</div></Link>
+                            <Link to={`/encounter/${id}/${monster}`}><div key={monster} className="m-2 border-2 border-black p-2">{monster.toUpperCase()}</div></Link>
                         )
                     })}
                 </div>

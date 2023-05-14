@@ -56,3 +56,27 @@ export async function detail(id) {
         throw new Error("Invalid GET Request")
     }
 }
+
+export async function update(id, data){
+    try {
+        const options = {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        } 
+        const url = `http://localhost:4000/encounter/${id}`
+        const response = await fetch(url, options)
+        
+        if(response.ok){
+            return response.json()
+        } else {
+            throw new Error("Invalid PUT Request")
+        }
+
+    } catch(err){
+        console.log(err)
+        return err
+    }
+}

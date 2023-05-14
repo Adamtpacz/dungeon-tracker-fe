@@ -29,3 +29,13 @@ export async function getEncounter(id){
         throw new Error(err)
     }
 }
+
+export async function updateEncounter(id, data){
+    try {
+        const updatedEncounter = await encounterAPI.update(id, data)
+        return updatedEncounter
+    } catch (err) {
+        console.log(err)
+        throw new Error(err)
+    }
+}
