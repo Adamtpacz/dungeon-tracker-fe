@@ -54,31 +54,31 @@ export default function EncounterShow() {
 
     const loaded = () => {
         return (
-            <section className="flex flex-col items-center">
+            <section className="flex flex-col items-center mb-96">
                 <h1>Encounter Show Page</h1>
-                <div className="grid grid-cols-5 grid-rows-1 w-full h-64 m-4">
-                    <div className="border-2 border-black m-4 rounded-2xl col-start-1 col-end-4 p-8">
-                        <h1 className='font-bold text-2xl'>{encounter.name}</h1>
+                <div className="flex justify-center">
+                    <div className="border-2 border-black rounded-3xl p-8 m-4 bg-slate-200 flex flex-col w-1/4">
+                        <h1 className='font-bold text-2xl mb-4'>{encounter.name}</h1>
                         <p><strong>Flavor Text:</strong> {encounter.flavorText}</p>
                     </div>
-                    <div className="border-2 border-red-700 m-4 rounded-2xl col-start-4 col-end-6 flex p-4 justify-center">
-                        <img alt="Encounter Battle Map" className="" src={encounter.map || defaultImage} />
+                    <div className="border-2 border-black rounded-3xl p-6 m-4 bg-slate-200">
+                        <img alt="Encounter Battle Map" className="w-96 h-full rounded-3xl border-2 border-black" src={encounter.map || defaultImage} />
                     </div>
                 </div>
-                <form className="flex flex-col items-center w-80" onSubmit={handleSubmit}>
+                <form className="flex flex-col items-center w-1/4" onSubmit={handleSubmit}>
                     <input
                         onChange={handleChange}
-                        className="text-center m-2 border-2 border-neutral-950 p-1 rounded-lg w-full"
+                        className="text-center m-2 border-2 border-neutral-950  p-2 rounded-lg w-full"
                         placeholder="Monster Name"
                         name="index"
                         value={monster.index}
                     />
-                    <button className="bg-slate-400 m-2 border-2 border-neutral-950 p-2 rounded-lg">Add Monster</button>
+                    <button className="bg-slate-400 hover:bg-slate-300 m-2 border-2 border-neutral-950 p-2 rounded-lg">Add Monster</button>
                 </form>
-                <div className="border-2 border-black w-1/2 h-16 my-8 flex justify-center">
+                <div className=" h-16 mt-4 grid gap-4 grid-cols-4">
                     {encounter.monsters?.map((monster) => {
                         return (
-                            <Link to={`/encounter/${id}/${monster}`}><div key={monster} className="m-2 border-2 border-black p-2">{monster.toUpperCase()}</div></Link>
+                            <Link to={`/encounter/${id}/${monster}`}><div key={monster} className="bg-slate-300 hover:bg-slate-100 border-2 border-black p-4 mx-2 mb-4 text-center font-bold rounded-lg">{monster.toUpperCase()}</div></Link>
                         )
                     })}
                 </div>
