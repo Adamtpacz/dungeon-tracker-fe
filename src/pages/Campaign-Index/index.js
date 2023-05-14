@@ -26,7 +26,7 @@ export default function CampaignIndex(props) {
     const loaded = () => {
         return campaigns?.map((campaign) => {
             return (
-                <div key={campaign._id} className='border-2 border-black flex flex-col justify-start items-center rounded-3xl p-2 pb-1 bg-slate-200'>
+                <div key={campaign._id} className='border-2 border-black flex flex-col justify-start items-center rounded-3xl p-2 pb-1 bg-slate-200 mb-24'>
                     <Link to={`/campaign/${campaign._id}`}>
                         <h1 className='font-bold text-2xl mb-4'>{campaign.title}</h1>
                         <img alt="Campaign Graphic" className="border-2 border-black rounded-3xl hover:scale-105 mb-4 h-96" src={campaign.image || defaultImage}/>
@@ -42,7 +42,7 @@ export default function CampaignIndex(props) {
     }
 
     return (
-        <section className='grid gap-16 grid-cols-4 px-32'>
+        <section className='grid gap-16 grid-cols-4 px-32 mb-0'>
             {isLoading ? loading() : loaded()}
         </section>
     )

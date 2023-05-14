@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, label {
   margin-top: 0;
   text-align: center;
   font-family: 'Cormorant Unicase', serif;
@@ -21,21 +21,4 @@ main {
 
 .Campaign-list a {
   text-decoration: none;
-}
-
-.Campaign-list a:hover {
-  text-decoration: underline;
-  /* color: #333; */
-}
-
-.Campaign-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.Campaign-form input {
-  margin: 10px;
-  width: 50%;
-  text-align: center;
 }
