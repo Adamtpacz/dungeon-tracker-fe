@@ -22,7 +22,6 @@ export default function Main() {
                 <Route path='/campaign/:id/encounters/new' element={ <EncounterCreate /> } />
                 <Route path='/encounter/:id' element={ <EncounterShow /> } />
                 <Route path='/encounter/:id/:monsterIndex' element={ <Monster /> } />
-
             </Routes>
         </main>
     )
