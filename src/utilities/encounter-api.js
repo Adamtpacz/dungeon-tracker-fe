@@ -44,17 +44,23 @@ export async function create(data, id) {
 }
 
 export async function detail(id) {
-    const options = {
-        method: 'GET'
-    } 
-    const url = `${BASE_URL}/encounter/${id}`
-    const response = await fetch(url, options)
-    
-    if(response.ok){
-        return response.json()
-    } else {
-        throw new Error("Invalid GET Request")
+    try {
+        const options = {
+            method: 'GET'
+        } 
+        const url = `${BASE_URL}/encounter/${id}`
+        const response = await fetch(url, options)
+        
+        if(response.ok){
+            return response.json()
+        } else {
+            throw new Error("Invalid GET Request")
+        }
+    } catch(err) {
+        console.log(err)
+        return err
     }
+    
 }
 
 export async function update(id, data){
