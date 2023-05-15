@@ -5,7 +5,7 @@ export async function index(id) {
         const options = {
             method: 'GET'
         }
-        const url = `${BASE_URL}/${id}/encounters`
+        const url = `${BASE_URL}/campaign/${id}/encounters`
         const response = await fetch(url, options)
         
         if(response.ok){
@@ -29,7 +29,7 @@ export async function create(data, id) {
             body: JSON.stringify(data)
         }
         
-        const url = `${BASE_URL}/${id}/encounters`
+        const url = `${BASE_URL}/campaign/${id}/encounters`
         const response = await fetch(url, options)
         
         if(response.ok){
@@ -47,7 +47,7 @@ export async function detail(id) {
     const options = {
         method: 'GET'
     } 
-    const url = `http://localhost:4000/encounter/${id}`
+    const url = `${BASE_URL}/encounter/${id}`
     const response = await fetch(url, options)
     
     if(response.ok){
@@ -66,7 +66,7 @@ export async function update(id, data){
             },
             body: JSON.stringify(data)
         } 
-        const url = `http://localhost:4000/encounter/${id}`
+        const url = `${BASE_URL}/encounter/${id}`
         const response = await fetch(url, options)
         
         if(response.ok){

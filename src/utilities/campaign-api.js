@@ -4,8 +4,10 @@ export async function index() {
     try {
         const options = {
             method: 'GET'
-        } 
-        const response = await fetch(BASE_URL, options)
+        }
+        
+        const url = `${BASE_URL}/campaign`
+        const response = await fetch(url, options)
         
         if(response.ok){
             return response.json()
@@ -28,7 +30,8 @@ export async function create(data) {
             body: JSON.stringify(data)
         } 
 
-        const response = await fetch(BASE_URL, options)
+        const url = `${BASE_URL}/campaign`
+        const response = await fetch(url, options)
         
         if(response.ok){
             return response.json()
@@ -45,7 +48,7 @@ export async function detail(id) {
     const options = {
         method: 'GET'
     } 
-    const url = `${BASE_URL}/${id}`
+    const url = `${BASE_URL}/campaign/${id}`
     const response = await fetch(url, options)
     
     if(response.ok){
@@ -64,7 +67,7 @@ export async function update(id, data){
             },
             body: JSON.stringify(data)
         } 
-        const url = `${BASE_URL}/${id}`
+        const url = `${BASE_URL}/campaign/${id}`
         const response = await fetch(url, options)
         
         if(response.ok){
@@ -84,7 +87,7 @@ export async function destroy(id){
         const options = {
             method: 'DELETE'
         } 
-        const url = `${BASE_URL}/${id}`
+        const url = `${BASE_URL}/campaign/${id}`
         const response = await fetch(url, options)
         
         if(response.ok){
