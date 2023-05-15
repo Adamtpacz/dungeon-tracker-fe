@@ -42,7 +42,7 @@ export default function CampaignIndex(props) {
     }
 
     return (
-        <section className='grid gap-4 grid-cols-4 px-72 mb-0'>
+        <section className='grid gap-4 grid-cols-4 px-48 mb-0'>
             {isLoading ? loading() : loaded()}
         </section>
     )
