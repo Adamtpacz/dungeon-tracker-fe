@@ -45,16 +45,21 @@ export async function create(data) {
 }
 
 export async function detail(id) {
-    const options = {
-        method: 'GET'
-    } 
-    const url = `${BASE_URL}/campaign/${id}`
-    const response = await fetch(url, options)
-    
-    if(response.ok){
-        return response.json()
-    } else {
-        throw new Error("Invalid GET Request")
+    try {
+        const options = {
+            method: 'GET'
+        } 
+        const url = `${BASE_URL}/campaign/${id}`
+        const response = await fetch(url, options)
+        
+        if(response.ok){
+            return response.json()
+        } else {
+            throw new Error("Invalid GET Request")
+        }  
+    } catch(err) {
+        console.log(err)
+        return err
     }
 }
 
