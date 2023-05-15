@@ -65,68 +65,75 @@ export default function CampaignUpdate() {
             }
         } catch (err) {
             console.log(err)
-            navigate(`/people/${id}`)
+            navigate(`/campaign/${id}`)
         }
     }
 
     const loaded = () => {
         return (
             <section>
-                <h1>Edit page for {campaign.title}</h1>
-                <form className='Campaign-form' onSubmit={ handleSubmit }>
-                <input
-                    className='m-2 border-2 border-neutral-950 p-1'
-                    onChange={handleChange}
-                    value={editForm.title}
-                    name="title"
-                    required
-                    placeholder="Enter your campaign's title"
-                />
-                <input
-                    className='m-2 border-2 border-neutral-950 p-1'
-                    onChange={handleChange}
-                    value={editForm.description}
-                    name="description"
-                    placeholder="Description"
-                />
-                <input
-                    className='m-2 border-2 border-neutral-950 p-1'
-                    onChange={handleChange}
-                    value={editForm.startLevel}
-                    name="startLevel"
-                    required
-                    type="number"
-                    placeholder="Starting Level"
-                />
-                <input
-                    className='m-2 border-2 border-neutral-950 p-1'
-                    onChange={handleChange}
-                    value={editForm.endLevel}
-                    name="endLevel"
-                    required
-                    type="number"
-                    placeholder="Ending Level"
-                />
-                <input
-                    className='m-2 border-2 border-neutral-950 p-1'
-                    onChange={handleChange}
-                    value={editForm.numOfPlayers}
-                    name="numOfPlayers"
-                    type="number"
-                    placeholder="Numbers of Players"
-                />
-                <input
-                    className='m-2 border-2 border-neutral-950 p-1'
-                    onChange={handleChange}
-                    value={editForm.image}
-                    name="image"
-                    placeholder="Campaign Image URL"
-                />
-                <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1'>Submit</button>
-            </form>
-            <div className='flex justify-center'>
-                <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 w-20' onClick={handleDelete}>Delete</button>
-            </div>
+                <h1 className='text-3xl'>Edit details for {campaign.title}</h1>
+                <form className='flex flex-col items-center' onSubmit={handleSubmit}>
+                    <label className='text-lg'>Title</label>
+                    <input
+                        className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                        onChange={handleChange}
+                        value={editForm.title}
+                        name="title"
+                        required
+                        placeholder="Enter your campaign's title"
+                    />
+                    <label className='text-lg'>Description</label>
+                    <input
+                        className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                        onChange={handleChange}
+                        value={editForm.description}
+                        type="textarea"
+                        name="description"
+                        placeholder="Description"
+                    />
+                    <label className='text-lg'>Starting Level</label>
+                    <input
+                        className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                        onChange={handleChange}
+                        value={editForm.startLevel}
+                        name="startLevel"
+                        required
+                        type="number"
+                        placeholder="Starting Level"
+                    />
+                    <label className='text-lg'>Ending Level</label>
+                    <input
+                        className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                        onChange={handleChange}
+                        value={editForm.endLevel}
+                        name="endLevel"
+                        required
+                        type="number"
+                        placeholder="Ending Level"
+                    />
+                    <label className='text-lg'>Number of Players</label>
+                    <input
+                        className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                        onChange={handleChange}
+                        value={editForm.numOfPlayers}
+                        name="numOfPlayers"
+                        type="number"
+                        placeholder="Numbers of Players"
+                    />
+                    <label className='text-lg'>Campaign Image URL</label>
+                    <input
+                        className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                        onChange={handleChange}
+                        value={editForm.image}
+                        name="image"
+                        placeholder="Campaign Image URL"
+                    />
+                    <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 w-32 rounded-lg hover:bg-slate-300'>Submit</button>
+                </form>
+                <div className='flex justify-center'>
+                    <button className='bg-slate-400 hover:bg-slate-300 m-2 border-2 border-neutral-950 rounded-lg p-1 w-32' onClick={handleDelete}>Delete</button>
+                </div>
             </section>
         )
     }

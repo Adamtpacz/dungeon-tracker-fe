@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 import { createCampaign } from '../../utilities/campaign-services'
 
 export default function CampaignCreate() {
 
-    const [ newForm, setNewForm ] = useState({
+    const navigate = useNavigate()
+
+    const [newForm, setNewForm] = useState({
         title: "",
         description: "",
         startLevel: "",
@@ -24,7 +27,8 @@ export default function CampaignCreate() {
                 numOfPlayers: "",
                 image: ""
             })
-        } catch(err) {
+            navigate('/')
+        } catch (err) {
             console.log(err)
         }
     }
@@ -35,10 +39,10 @@ export default function CampaignCreate() {
 
     return (
         <section>
-            <h1>Campaign Create Page</h1>
-            <form className='Campaign-form' onSubmit={ handleSubmit }>
+            <h1 className='text-3xl'>Create Campaign</h1>
+            <form className='flex flex-col items-center' onSubmit={handleSubmit}>
                 <input
-                    className=''
+                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
                     onChange={handleChange}
                     value={newForm.title}
                     name="title"
@@ -46,12 +50,14 @@ export default function CampaignCreate() {
                     placeholder="Enter your campaign's title"
                 />
                 <input
+                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
                     onChange={handleChange}
                     value={newForm.description}
                     name="description"
                     placeholder="Description"
                 />
                 <input
+                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
                     onChange={handleChange}
                     value={newForm.startLevel}
                     name="startLevel"
@@ -60,6 +66,7 @@ export default function CampaignCreate() {
                     placeholder="Starting Level"
                 />
                 <input
+                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
                     onChange={handleChange}
                     value={newForm.endLevel}
                     name="endLevel"
@@ -68,6 +75,7 @@ export default function CampaignCreate() {
                     placeholder="Ending Level"
                 />
                 <input
+                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
                     onChange={handleChange}
                     value={newForm.numOfPlayers}
                     name="numOfPlayers"
@@ -75,12 +83,13 @@ export default function CampaignCreate() {
                     placeholder="Numbers of Players"
                 />
                 <input
+                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
                     onChange={handleChange}
                     value={newForm.image}
                     name="image"
                     placeholder="Campaign Image URL"
                 />
-                <button>Create</button>
+                <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 w-32 rounded-lg hover:bg-slate-300 mb-40'>Create</button>
             </form>
         </section>
     )

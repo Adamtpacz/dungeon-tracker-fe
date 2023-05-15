@@ -1,22 +1,20 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getCampaign } from '../../utilities/campaign-services'
+import { Link } from 'react-router-dom'
 
 const defaultImage = "https://t3.ftcdn.net/jpg/05/47/69/40/360_F_547694087_0CoRsUGjizVDmt3ev8q2nwiR8BDYRWxJ.jpg"
 
 export default function CampaignShow() {
 
     const { id } = useParams()
-    // console.log("documentId:", id)
-    const [ campaign, setCampaign ] = useState()
-    const [ isLoading, setIsLoading ] = useState(true)
+    const [campaign, setCampaign] = useState()
+    const [isLoading, setIsLoading] = useState(true)
 
     async function handleRequest() {
         try {
             const campaignData = await getCampaign(id)
-            console.log(campaignData)
             setCampaign(campaignData)
-            console.log("Current campaign:", campaign)
             setIsLoading(false)
         } catch (err) {
             console.log(err)
@@ -29,14 +27,18 @@ export default function CampaignShow() {
 
     const loaded = () => {
         return (
-            <div className='Campaign-details flex flex-col items-center'>
-                <h1>Campaign Show Page</h1>
-                <h2>{campaign.title}</h2>
-                <p>Description: {campaign.description}</p>
-                <p>Starting Level: {campaign.startLevel}</p>
-                <p>Ending Level: {campaign.startLevel}</p>
-                <p>Number of Players: {campaign.numOfPlayers}</p>
-                <img className='w-96' alt="Campaign Art" src={campaign.image || defaultImage}/>
+            <div className='flex justify-center'>
+                <div className='border-2 border-black rounded-3xl p-8 m-4 bg-slate-200'>
+                    <img className='w-96 h-full rounded-3xl border-2 border-black' alt="Campaign Art" src={campaign.image || defaultImage} />
+                </div>
+                <div className='border-2 border-black rounded-3xl h-fit p-8 m-4 bg-slate-200 flex flex-col w-1/4'>
+                    <h2 className='text-3xl'>{campaign.title}</h2>
+                    <p><strong>Description:</strong> {campaign.description}</p>
+                    <p><strong>Starting Level:</strong> {campaign.startLevel}</p>
+                    <p><strong>Ending Level:</strong> {campaign.startLevel}</p>
+                    <p><strong>Number of Players:</strong> {campaign.numOfPlayers}</p>
+                    <Link className='flex justify-center' to={`/campaign/${campaign._id}/encounters`}><button className='bg-slate-400 hover:bg-slate-300 m-2 border-2 border-neutral-950 p-1 rounded-lg'>Go to Encounters</button></Link>
+                </div>
             </div>
         )
     }
@@ -49,7 +51,7 @@ export default function CampaignShow() {
 
     return (
         <section>
-            { isLoading ? loading() : loaded() }
+            {isLoading ? loading() : loaded()}
         </section>
     )
 }

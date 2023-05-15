@@ -1,9 +1,9 @@
-const bannerImage = "https://images.ctfassets.net/swt2dsco9mfe/1dQoOoGmRy9NMlAU2aEULd/e8a5f6134a5afba59b3a0cac3cf4f31d/tiamat-email.jpg?q=70"
+const bannerImage = "https://images.squarespace-cdn.com/content/v1/5b47bb08f8370a85913c511a/1585289546773-TRHH538SP1HR05O2IPVZ/D%26D+Page+Header.png?format=1000w"
 
 export default function Header() {
     return (
-        <header className="Header">
-            <img alt="Banner" src={bannerImage}/>
+        <header className="h-72 px-4 py-4">
+            <img className="border-4 border-stone-100 h-full w-full rounded-3xl" alt="Banner" src={bannerImage}/>
         </header>
     )
 }

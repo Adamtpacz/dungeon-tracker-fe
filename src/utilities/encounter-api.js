@@ -1,12 +1,11 @@
 const BASE_URL = process.env.REACT_APP_BASE_URL
 
-export async function index() {
+export async function index(id) {
     try {
         const options = {
             method: 'GET'
         }
-        
-        const url = `${BASE_URL}/campaign`
+        const url = `${BASE_URL}/campaign/${id}/encounters`
         const response = await fetch(url, options)
         
         if(response.ok){
@@ -20,7 +19,7 @@ export async function index() {
     }
 }
 
-export async function create(data) {
+export async function create(data, id) {
     try {
         const options = {
             method: 'POST',
@@ -28,9 +27,9 @@ export async function create(data) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data)
-        } 
-
-        const url = `${BASE_URL}/campaign`
+        }
+        
+        const url = `${BASE_URL}/campaign/${id}/encounters`
         const response = await fetch(url, options)
         
         if(response.ok){
@@ -49,18 +48,19 @@ export async function detail(id) {
         const options = {
             method: 'GET'
         } 
-        const url = `${BASE_URL}/campaign/${id}`
+        const url = `${BASE_URL}/encounter/${id}`
         const response = await fetch(url, options)
         
         if(response.ok){
             return response.json()
         } else {
             throw new Error("Invalid GET Request")
-        }  
+        }
     } catch(err) {
         console.log(err)
         return err
     }
+    
 }
 
 export async function update(id, data){
@@ -72,7 +72,7 @@ export async function update(id, data){
             },
             body: JSON.stringify(data)
         } 
-        const url = `${BASE_URL}/campaign/${id}`
+        const url = `${BASE_URL}/encounter/${id}`
         const response = await fetch(url, options)
         
         if(response.ok){
@@ -81,25 +81,6 @@ export async function update(id, data){
             throw new Error("Invalid PUT Request")
         }
 
-    } catch(err){
-        console.log(err)
-        return err
-    }
-}
-
-export async function destroy(id){
-    try {
-        const options = {
-            method: 'DELETE'
-        } 
-        const url = `${BASE_URL}/campaign/${id}`
-        const response = await fetch(url, options)
-        
-        if(response.ok){
-            return response.json()
-        } else {
-            throw new Error("Invalid DELETE Request")
-        }
     } catch(err){
         console.log(err)
         return err
