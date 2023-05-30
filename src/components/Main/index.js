@@ -12,16 +12,18 @@ import Monster from "../../pages/Monster"
 export default function Main() {
     return (
         <main className="">
-            <h1 className="font-bold text-6xl my-4">Dungeon Tracker</h1>
+            <div>
+                <h1 className="font-bold text-6xl mb-4 ml-16">Dungeon Tracker</h1>
+            </div>
             <Routes>
-                <Route path='/' element={ <CampaignIndex /> } />
-                <Route path='/campaign/new' element={ <CampaignCreate /> } />
-                <Route path='/campaign/:id' element={ <CampaignShow /> } />
-                <Route path='/campaign/:id/edit' element={ <CampaignUpdate /> } />
-                <Route path='/campaign/:id/encounters' element={ <EncounterIndex /> } />
-                <Route path='/campaign/:id/encounters/new' element={ <EncounterCreate /> } />
-                <Route path='/encounter/:id' element={ <EncounterShow /> } />
-                <Route path='/encounter/:id/:monsterIndex' element={ <Monster /> } />
+                <Route path='/' element={<CampaignIndex />} />
+                <Route path='/campaign/new' element={<CampaignCreate />} />
+                <Route path='/campaign/:id' element={<CampaignShow />} />
+                <Route path='/campaign/:id/edit' element={<CampaignUpdate />} />
+                <Route path='/campaign/:id/encounters' element={<EncounterIndex />} />
+                <Route path='/campaign/:id/encounters/new' element={<EncounterCreate />} />
+                <Route path='/encounter/:id' element={<EncounterShow />} />
+                <Route path='/encounter/:id/:monsterIndex' element={<Monster />} />
             </Routes>
         </main>
     )

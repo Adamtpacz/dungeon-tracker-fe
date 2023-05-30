@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const defaultImage = "https://t3.ftcdn.net/jpg/05/47/69/40/360_F_547694087_0CoRsUGjizVDmt3ev8q2nwiR8BDYRWxJ.jpg"
 
-export default function CampaignIndex(props) {
+export default function CampaignIndex() {
 
     const [ isLoading, setIsLoading ] = useState(true)
     const [ campaigns, setCampaigns ] = useState(null)
@@ -26,7 +26,7 @@ export default function CampaignIndex(props) {
     const loaded = () => {
         return campaigns?.map((campaign) => {
             return (
-                <div key={campaign._id} className='border-2 border-black flex flex-col justify-center items-center rounded-3xl p-4 pb-1 bg-slate-200 mb-8 w-fit'>
+                <div key={campaign._id} className='border-2 border-black flex flex-col justify-center items-center rounded-3xl p-4 mr-3 bg-slate-200 mb-8 w-9/12'>
                     <Link to={`/campaign/${campaign._id}`}>
                         <h1 className='font-bold text-2xl mb-4'>{campaign.title}</h1>
                         <img alt="Campaign Graphic" className="border-2 border-black rounded-3xl hover:scale-105 mb-4 h-96" src={campaign.image || defaultImage}/>
@@ -42,7 +42,7 @@ export default function CampaignIndex(props) {
     }
 
     return (
-        <section className='grid gap-4 grid-cols-4 px-72 mb-0'>
+        <section className='flex flex-col justify-center items-end'>
             {isLoading ? loading() : loaded()}
         </section>
     )
