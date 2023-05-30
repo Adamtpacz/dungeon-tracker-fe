@@ -26,7 +26,7 @@ export default function CampaignIndex() {
     const loaded = () => {
         return campaigns?.map((campaign) => {
             return (
-                <div key={campaign._id} className='border-2 border-black flex flex-col justify-center items-center rounded-3xl p-4 mr-3 bg-slate-200 mb-8 w-9/12'>
+                <div key={campaign._id} className='border-2 border-black flex flex-col justify-center items-center rounded-3xl w-9/12 p-4 mb-8 mr-3 mt-4 bg-slate-200'>
                     <Link to={`/campaign/${campaign._id}`}>
                         <h1 className='font-bold text-2xl mb-4'>{campaign.title}</h1>
                         <img alt="Campaign Graphic" className="border-2 border-black rounded-3xl hover:scale-105 mb-4 h-96" src={campaign.image || defaultImage}/>

@@ -11,10 +11,8 @@ import Monster from "../../pages/Monster"
 
 export default function Main() {
     return (
-        <main className="">
-            <div>
-                <h1 className="font-bold text-6xl mb-4 ml-16">Dungeon Tracker</h1>
-            </div>
+        <main>
+            <h1 className="font-bold text-6xl my-6 ml-16">Dungeon Tracker</h1>
             <Routes>
                 <Route path='/' element={<CampaignIndex />} />
                 <Route path='/campaign/new' element={<CampaignCreate />} />
