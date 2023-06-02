@@ -72,7 +72,7 @@ export default function CampaignUpdate() {
     const loaded = () => {
         return (
             <section className='flex flex-col items-center mt-12'>
-                <h1 className='text-3xl'>Edit details for {campaign.title}</h1>
+                <h1 className='text-3xl mx-2'>Edit details for {campaign.title}</h1>
                 <form className='flex flex-col items-center w-5/6' onSubmit={handleSubmit}>
                     <label className='text-xl'>Title</label>
                     <input

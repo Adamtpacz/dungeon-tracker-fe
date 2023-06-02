@@ -31,7 +31,7 @@ export default function CampaignIndex() {
                         <h1 className='font-bold text-2xl mb-4'>{campaign.title}</h1>
                         <img alt="Campaign Graphic" className="border-2 border-black rounded-3xl hover:scale-105 mb-4 h-96" src={campaign.image || defaultImage} />
                     </Link>
-                    <div className='border-2 border-red-500 w-full flex justify-center p-2'>
+                    <div className='w-full flex justify-center p-2'>
                         <Link to={`/campaign/${campaign._id}/edit`}><button className='bg-slate-400 hover:bg-slate-300 border-2 rounded-lg border-black w-32 h-12 text-xl font-bold'>Edit</button></Link>
                     </div>
                 </div>
