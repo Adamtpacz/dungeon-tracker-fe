@@ -51,11 +51,13 @@ export default function EncounterIndex() {
 
     return (
         <div>
-            <h1 className='text-4xl mb-4 font-semibold'>Encounters for <span className='text-cyan-900 font-bold'>{campaign.title}</span></h1>
+            <h1 className='text-4xl mb-4 font-semibold'>Encounters for <span className='text-cyan-700 font-bold'>{campaign.title}</span></h1>
             <div className='flex justify-center mb-4'>
-                <Link to={`/campaign/${id}/encounters/new`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-2 rounded-lg hover:bg-slate-300'>Add Encounter</button></Link>
+                <Link to={`/campaign/${id}/encounters/new`}>
+                    <button className='bg-slate-400 hover:bg-slate-300 border-2 rounded-lg border-black p-4 h-16 text-xl font-bold'>Add Encounter</button>
+                </Link>
             </div>
-            <section className='grid gap-4 grid-cols-3 px-24'>
+            <section className='flex flex-col justify-center items-end mx-6'>
                 {isLoading ? loading() : loaded()}
             </section>
         </div>

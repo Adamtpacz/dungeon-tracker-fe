@@ -6,8 +6,8 @@ const defaultImage = "https://t3.ftcdn.net/jpg/05/47/69/40/360_F_547694087_0CoRs
 
 export default function CampaignIndex() {
 
-    const [isLoading, setIsLoading] = useState(true)
-    const [campaigns, setCampaigns] = useState(null)
+    const [ isLoading, setIsLoading ] = useState(true)
+    const [ campaigns, setCampaigns ] = useState(null)
 
     async function handleRequest() {
         try {
