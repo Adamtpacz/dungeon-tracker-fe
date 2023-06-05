@@ -37,11 +37,11 @@ export default function EncounterCreate() {
     }
 
     return (
-        <section>
-            <h1 className='text-3xl mb-6'>Create Encounter</h1>
-            <form className='flex flex-col items-center' onSubmit={ handleSubmit }>
+        <section className='flex flex-col items-center mt-12'>
+            <h1 className='text-3xl'>Create Encounter</h1>
+            <form className='flex flex-col items-center w-5/6' onSubmit={ handleSubmit }>
                 <input
-                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-full text-center'
                     onChange={handleChange}
                     value={newForm.name}
                     name="name"
@@ -49,14 +49,14 @@ export default function EncounterCreate() {
                     placeholder="Enter your encounter's name"
                 />
                 <input
-                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-full text-center'
                     onChange={handleChange}
                     value={newForm.flavorText}
                     name="flavorText"
                     placeholder="Flavor Text"
                 />
                 <input
-                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-full text-center'
                     onChange={handleChange}
                     value={newForm.map}
                     name="map"
@@ -68,7 +68,7 @@ export default function EncounterCreate() {
                     name="campaign"
                     type="hidden"
                 />
-                <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 w-32 rounded-lg hover:bg-slate-300 mb-64'>Create</button>
+                <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 w-1/2 h-16 rounded-lg hover:bg-slate-300 text-2xl font-bold'>Create</button>
             </form>
         </section>
     )
