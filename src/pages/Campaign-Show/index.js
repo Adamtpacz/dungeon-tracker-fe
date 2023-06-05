@@ -37,7 +37,9 @@ export default function CampaignShow() {
                     <p className='my-2'><strong>Starting Level:</strong> {campaign.startLevel}</p>
                     <p><strong>Ending Level:</strong> {campaign.startLevel}</p>
                     <p className='my-2'><strong>Number of Players:</strong> {campaign.numOfPlayers}</p>
-                    <Link className='flex justify-center' to={`/campaign/${campaign._id}/encounters`}><button className='bg-slate-400 hover:bg-slate-300 m-2 border-2 border-neutral-950 p-3 rounded-lg text-lg font-bold'>Go to Encounters</button></Link>
+                    <Link className='flex justify-center' to={`/campaign/${campaign._id}/encounters`}>
+                        <button className='bg-slate-400 hover:bg-slate-300 m-2 border-2 border-neutral-950 p-3 rounded-lg text-lg font-bold'>Go to Encounters</button>
+                    </Link>
                 </div>
             </div>
         )
