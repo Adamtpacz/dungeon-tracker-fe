@@ -44,7 +44,7 @@ export default function CampaignIndex() {
     }
 
     return (
-        <section className='flex flex-col justify-center items-center mx-6'>
+        <section className='flex flex-col justify-center items-center mx-6 lg:grid lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 lg:gap-x-4'>
             {isLoading ? loading() : loaded()}
         </section>
     )
