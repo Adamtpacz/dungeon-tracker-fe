@@ -3,7 +3,7 @@ const bannerImage = "https://images.squarespace-cdn.com/content/v1/5b47bb08f8370
 export default function Header() {
     return (
         <header className="p-1">
-            <img className="border-2 border-black rounded-2xl" alt="Banner" src={bannerImage}/>
+            <img className="border-2 border-black rounded-2xl w-full" alt="Banner" src={bannerImage}/>
         </header>
     )
 }
