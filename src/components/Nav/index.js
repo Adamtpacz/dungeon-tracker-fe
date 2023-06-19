@@ -6,7 +6,7 @@ const plusIcon = "https://static.vecteezy.com/system/resources/previews/000/567/
 
 export default function Nav() {
     return (
-        <nav className='border-y-2 border-black flex mt-2 justify-between items-center p-2 sticky top-0 bg-slate-200'>
+        <nav className='border-y-2 border-black flex mt-2 justify-between items-center p-2 sticky top-0 bg-secondary'>
             <Link to="/">
                 <img className='border-2 border-black hover:scale-110 w-20 rounded-xl' alt="D&D Logo" src={homeIcon}/>
             </Link>

@@ -28,17 +28,17 @@ export default function CampaignShow() {
     const loaded = () => {
         return (
             <div className='flex flex-col justify-center lg:flex-row'>
-                <div className='border-2 border-black rounded-3xl p-8 m-4 bg-slate-200'>
+                <div className='border-2 border-black rounded-3xl p-8 m-4 bg-secondary'>
                     <img className='w-96 h-full rounded-3xl border-2 border-black' alt="Campaign Art" src={campaign.image || defaultImage} />
                 </div>
-                <div className='border-2 border-black rounded-3xl h-fit p-8 m-4 bg-slate-200 flex flex-col lg:w-1/3'>
+                <div className='border-2 border-black rounded-3xl h-fit p-8 m-4 bg-secondary flex flex-col lg:w-1/3'>
                     <h2 className='text-3xl mb-4'>{campaign.title}</h2>
                     <p><strong>Description:</strong> {campaign.description}</p>
                     <p className='my-2'><strong>Starting Level:</strong> {campaign.startLevel}</p>
                     <p><strong>Ending Level:</strong> {campaign.startLevel}</p>
                     <p className='my-2'><strong>Number of Players:</strong> {campaign.numOfPlayers}</p>
                     <Link className='flex justify-center' to={`/campaign/${campaign._id}/encounters`}>
-                        <button className='bg-slate-400 hover:bg-slate-300 m-2 border-2 border-neutral-950 p-3 rounded-lg text-lg font-bold'>Go to Encounters</button>
+                        <button className='bg-primary hover:scale-110 m-2 border-2 border-neutral-950 p-3 rounded-lg text-lg font-bold'>Go to Encounters</button>
                     </Link>
                 </div>
             </div>

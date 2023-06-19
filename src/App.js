@@ -6,7 +6,7 @@ import Nav from './components/Nav'
 
 export default function App() {
   return (
-    <div className=''>
+    <div className='bg-stone-400'>
       <Header />
       <Nav />
       <Main />

@@ -37,7 +37,7 @@ export default function EncounterCreate() {
     }
 
     return (
-        <section className='flex flex-col items-center mt-12 mb-24'>
+        <section className='flex flex-col items-center mt-28 lg:mt-12'>
             <h1 className='text-3xl'>Create Encounter</h1>
             <form className='flex flex-col items-center w-5/6 lg:w-1/2 2xl:w-1/3' onSubmit={ handleSubmit }>
                 <input
@@ -68,7 +68,7 @@ export default function EncounterCreate() {
                     name="campaign"
                     type="hidden"
                 />
-                <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 w-1/2 lg:w-1/4 h-16 rounded-lg hover:bg-slate-300 text-2xl font-bold'>Create</button>
+                <button className='bg-primary mb-40 border-2 border-neutral-950 p-1 w-1/2 lg:w-1/4 h-16 rounded-lg hover:scale-110 text-2xl font-bold'>Create</button>
             </form>
         </section>
     )

@@ -129,10 +129,10 @@ export default function CampaignUpdate() {
                         name="image"
                         placeholder="Campaign Image URL"
                     />
-                    <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 w-1/2 lg:w-60 h-16 rounded-lg hover:bg-slate-300 text-2xl font-bold'>Submit</button>
+                    <button className='bg-primary m-2 border-2 border-neutral-950 p-1 w-1/2 lg:w-60 h-16 rounded-lg hover:scale-110 text-2xl font-bold'>Submit</button>
                 </form>
                 <div className='flex justify-center w-5/6'>
-                    <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 w-1/2 lg:w-60 h-16 rounded-lg hover:bg-slate-300 text-2xl font-bold' onClick={handleDelete}>Delete</button>
+                    <button className='bg-primary m-2 border-2 border-neutral-950 p-1 w-1/2 lg:w-60 h-16 rounded-lg hover:scale-110 text-2xl font-bold' onClick={handleDelete}>Delete</button>
                 </div>
             </section>
         )

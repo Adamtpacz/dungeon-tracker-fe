@@ -28,7 +28,7 @@ export default function Monster() {
     const loaded = () => {
         return (
             <section className="flex flex-col items-center mx-6">
-                <div className="border-2 border-black my-8 rounded-3xl p-8 flex flex-col bg-slate-200 mb-32">
+                <div className="border-2 border-black my-8 rounded-3xl p-8 flex flex-col bg-secondary mb-32">
                     <h1 className="text-5xl font-bold">{monster.name}</h1>
                     <ul className="list-disc list-inside"><span className="font-bold text-xl">Stats</span>
                         <li><strong>Size:</strong> {monster.size}</li>
@@ -39,7 +39,7 @@ export default function Monster() {
                         <h2 className="font-bold text-3xl">Actions:</h2>
                         {monster.actions?.map((action) => {
                             return (
-                                <div className="border-2 border-black m-2 p-2 rounded-md bg-slate-400" key={action.name}>
+                                <div className="border-2 border-black m-2 p-2 rounded-md bg-primary" key={action.name}>
                                     <h2 className="font-bold text-xl">{action.name}</h2>
                                     {action.desc}
                                 </div>
