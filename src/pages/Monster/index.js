@@ -28,7 +28,7 @@ export default function Monster() {
     const loaded = () => {
         return (
             <section className="flex flex-col items-center mx-6">
-                <div className="border-2 border-black my-8 rounded-3xl p-8 flex flex-col bg-secondary mb-32">
+                <div className="border-2 border-black my-8 rounded-3xl p-8 flex flex-col bg-secondary mb-32 lg:w-2/3 2xl:w-1/2">
                     <h1 className="text-5xl font-bold">{monster.name}</h1>
                     <ul className="list-disc list-inside"><span className="font-bold text-xl">Stats</span>
                         <li><strong>Size:</strong> {monster.size}</li>
