@@ -57,7 +57,7 @@ export default function EncounterIndex() {
                     <button className='bg-slate-400 hover:bg-slate-300 border-2 rounded-lg border-black p-4 h-16 text-xl font-bold'>Add Encounter</button>
                 </Link>
             </div>
-            <section className='flex flex-col justify-center items-end mx-6'>
+            <section className='flex flex-col justify-center mx-6 lg:grid lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 lg:gap-x-4'>
                 {isLoading ? loading() : loaded()}
             </section>
         </div>
