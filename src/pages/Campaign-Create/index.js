@@ -38,11 +38,11 @@ export default function CampaignCreate() {
     }
 
     return (
-        <section>
+        <section className='flex flex-col items-center mt-12'>
             <h1 className='text-3xl'>Create Campaign</h1>
-            <form className='flex flex-col items-center' onSubmit={handleSubmit}>
+            <form className='flex flex-col items-center w-5/6 lg:w-1/2 2xl:w-1/3' onSubmit={handleSubmit}>
                 <input
-                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                    className='my-8 border-2 border-neutral-950 p-2 rounded-lg w-full text-center'
                     onChange={handleChange}
                     value={newForm.title}
                     name="title"
@@ -50,14 +50,14 @@ export default function CampaignCreate() {
                     placeholder="Enter your campaign's title"
                 />
                 <input
-                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                    className='mb-8 border-2 border-neutral-950 p-2 rounded-lg w-full text-center'
                     onChange={handleChange}
                     value={newForm.description}
                     name="description"
                     placeholder="Description"
                 />
                 <input
-                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                    className='mb-8 border-2 border-neutral-950 p-2 rounded-lg w-full text-center'
                     onChange={handleChange}
                     value={newForm.startLevel}
                     name="startLevel"
@@ -66,7 +66,7 @@ export default function CampaignCreate() {
                     placeholder="Starting Level"
                 />
                 <input
-                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                    className='mb-8 border-2 border-neutral-950 p-2 rounded-lg w-full text-center'
                     onChange={handleChange}
                     value={newForm.endLevel}
                     name="endLevel"
@@ -75,7 +75,7 @@ export default function CampaignCreate() {
                     placeholder="Ending Level"
                 />
                 <input
-                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                    className='mb-8 border-2 border-neutral-950 p-2 rounded-lg w-full text-center'
                     onChange={handleChange}
                     value={newForm.numOfPlayers}
                     name="numOfPlayers"
@@ -83,13 +83,13 @@ export default function CampaignCreate() {
                     placeholder="Numbers of Players"
                 />
                 <input
-                    className='m-2 border-2 border-neutral-950 p-2 rounded-lg w-1/3 text-center'
+                    className='mb-8 border-2 border-neutral-950 p-2 rounded-lg w-full text-center'
                     onChange={handleChange}
                     value={newForm.image}
                     name="image"
                     placeholder="Campaign Image URL"
                 />
-                <button className='bg-slate-400 m-2 border-2 border-neutral-950 p-1 w-32 rounded-lg hover:bg-slate-300 mb-40'>Create</button>
+                <button className='bg-primary mb-8 border-2 border-neutral-950 p-1 w-1/2 lg:w-1/4 h-16 rounded-lg hover:scale-110 text-2xl font-bold'>Create</button>
             </form>
         </section>
     )

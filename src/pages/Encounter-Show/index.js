@@ -55,16 +55,17 @@ export default function EncounterShow() {
     const loaded = () => {
         return (
             <section className="flex flex-col items-center">
-                <div className="flex justify-center">
-                    <div className="border-2 border-black rounded-3xl p-8 m-4 bg-slate-200 flex flex-col w-1/4">
+                <div className="lg:flex lg:justify-center">
+                    <div className="border-2 border-black rounded-3xl p-8 m-4 bg-secondary flex flex-col lg:w-1/3">
                         <h1 className='font-bold text-2xl mb-4'>{encounter.name}</h1>
                         <p><strong>Flavor Text:</strong> {encounter.flavorText}</p>
                     </div>
-                    <div className="border-2 border-black rounded-3xl p-6 m-4 bg-slate-200">
-                        <img alt="Encounter Battle Map" className="w-96 h-full rounded-3xl border-2 border-black" src={encounter.map || defaultImage} />
+                    <div className="border-2 border-black rounded-3xl p-6 m-4 bg-secondary">
+                        <h2 className="font-bold text-2xl mb-4">Encounter Map</h2>
+                        <img alt="Encounter Battle Map" className="w-96 h-fit rounded-3xl border-2 border-black" src={encounter.map || defaultImage} />
                     </div>
                 </div>
-                <form className="flex flex-col items-center w-1/4" onSubmit={handleSubmit}>
+                <form className="flex flex-col items-center w-5/6 lg:w-1/2 2xl:w-2/5" onSubmit={handleSubmit}>
                     <input
                         onChange={handleChange}
                         className="text-center m-2 border-2 border-neutral-950 p-2 rounded-lg w-full"
@@ -72,12 +73,12 @@ export default function EncounterShow() {
                         name="index"
                         value={monster.index}
                     />
-                    <button className="bg-slate-400 hover:bg-slate-300 m-2 border-2 border-neutral-950 p-2 rounded-lg">Add Monster</button>
+                    <button className="bg-primary hover:scale-110 m-2 border-2 border-neutral-950 p-3 rounded-lg text-lg font-bold">Add Monster</button>
                 </form>
-                <div className=" h-16 mt-4 grid gap-4 grid-cols-4 mb-96">
+                <div className="mt-4 grid gap-2 grid-cols-3 lg:flex lg:flex-wrap lg:w-1/2 lg:justify-center 2xl:w-2/5">
                     {encounter.monsters?.map((monster) => {
                         return (
-                            <Link to={`/encounter/${id}/${monster}`}><div key={monster} className="bg-slate-300 hover:bg-slate-100 hover:scale-110 border-2 border-black p-4 mx-2 mb-4 text-center font-bold rounded-lg">{monster.toUpperCase()}</div></Link>
+                            <Link to={`/encounter/${id}/${monster}`}><div key={monster} className="bg-secondary hover:scale-110 border-2 border-black mx-2 mb-2 h-24 w-28 text-center font-bold rounded-lg flex justify-center items-center">{monster.toUpperCase()}</div></Link>
                         )
                     })}
                 </div>

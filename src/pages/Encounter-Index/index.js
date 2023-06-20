@@ -33,7 +33,7 @@ export default function EncounterIndex() {
         return encounters?.map((encounter) => {
             if (encounter.campaign === id) {
                 return (
-                    <div key={encounter._id} className='border-2 border-black flex flex-col items-center rounded-3xl p-8 pb-1 bg-slate-200 mb-4'>
+                    <div key={encounter._id} className='border-2 border-black flex flex-col items-center rounded-3xl p-8 pb-1 bg-secondary mb-4'>
                         <Link to={`/encounter/${encounter._id}`}>
                             <h1 className='font-bold text-2xl mb-4'>{encounter.name}</h1>
                             <p className='mb-4'><strong>Flavor Text:</strong> {encounter.flavorText}</p>
@@ -51,11 +51,13 @@ export default function EncounterIndex() {
 
     return (
         <div>
-            <h1 className='text-4xl mb-4 font-semibold'>Encounters for <span className='text-cyan-900 font-bold'>{campaign.title}</span></h1>
-            <div className='flex justify-center mb-4'>
-                <Link to={`/campaign/${id}/encounters/new`}><button className='bg-slate-400 m-2 border-2 border-neutral-950 p-2 rounded-lg hover:bg-slate-300'>Add Encounter</button></Link>
+            <h1 className='text-4xl mt-10 mb-4 font-semibold'>Encounters for <span className='text-lime-800 font-bold'>{campaign.title}</span></h1>
+            <div className='flex justify-center mb-10'>
+                <Link to={`/campaign/${id}/encounters/new`}>
+                    <button className='bg-primary hover:scale-110 border-2 rounded-lg border-black p-4 h-16 text-xl font-bold'>Add Encounter</button>
+                </Link>
             </div>
-            <section className='grid gap-4 grid-cols-3 px-24'>
+            <section className='flex flex-col justify-center mx-6 lg:grid lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 lg:gap-x-4'>
                 {isLoading ? loading() : loaded()}
             </section>
         </div>
