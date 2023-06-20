@@ -68,7 +68,7 @@ export default function EncounterShow() {
                 <form className="flex flex-col items-center w-5/6 lg:w-1/2 2xl:w-2/5" onSubmit={handleSubmit}>
                     <input
                         onChange={handleChange}
-                        className="text-center m-2 border-2 border-neutral-950  p-2 rounded-lg w-full"
+                        className="text-center m-2 border-2 border-neutral-950 p-2 rounded-lg w-full"
                         placeholder="Monster Name"
                         name="index"
                         value={monster.index}
